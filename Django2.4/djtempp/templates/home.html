@@ -1,0 +1,28 @@
+<h1>    Home  Template Filter  </h1>
+
+<p>  {{ title | title }}  </p>
+<p>  {{ title | title }}  </p>
+
+<p> {{ date | date:"D d M Y f a" }} </p>
+
+<p> <b> List </b> </p>
+
+{%  for x  in list %}
+    <p  {{ forloop.counter }} {{ x }} </p>
+{% endfor %}
+
+<p> <b> List </b> </p>
+
+{%  for x  in list %}
+    <p class="{% cycle "bold" "" "" %}">  {{ x }} </p>
+{% endfor %}
+
+<p> <b> List </b> </p>
+
+{%  for x  in list %}
+    <p {% if forloop.counter|add:1|divisibleby:2 %} style="font-weight:bold" {% endif %}  >  {{ x }} </p>
+{% endfor %}
+
+
+{% include 'message.html' with t='rahul' %}
+{% include 'search.html'  %}

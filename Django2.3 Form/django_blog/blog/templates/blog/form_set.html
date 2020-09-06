@@ -1,0 +1,11 @@
+
+
+
+<form action="." method="POST">
+    {% csrf_token %}
+
+    {{ formset.management_form }}
+
+    {{ formset.as_p }}
+    <input type="submit" name="submit">
+</form>

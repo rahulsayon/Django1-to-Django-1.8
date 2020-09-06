@@ -1,0 +1,35 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+	{% comment %} <form action="." method="POST">
+			{% csrf_token %}
+		<input type="text" name="q">
+		
+		<input type="submit" name="submit">
+	</form> {% endcomment %}
+	
+			{% comment %} {{ form.as_p }} {% endcomment %}
+{% comment %} 
+	
+
+	<form action="." method="POST">
+			{% csrf_token %}
+
+		<p>  {{ form.user  }} <p/>
+		<p>  {{ form.title  }} <p/>
+		{% if form.title.errors %}
+			<p> Error with title are: {{ form.title.errors.as_text }} <p/>
+		{% endif %}
+
+
+		<p>  {{ form.slug  }} <p/>
+		
+		<input type="submit" name="submit">
+	</form> {% endcomment %}
+
+	{% include "blog/form copy.html" with form=form  as_text=True method='GET' %}
+
+
+
+{% endblock %}
